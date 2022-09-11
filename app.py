@@ -2,12 +2,10 @@ from flask import Flask, render_template, request
 import joblib
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection imp
+model = joblib.load("model.pkl")
 
-
-model = joblib.load(r"D:\Harshit_Gadhiya_Step_by_stepvideo\Self_made_project\Item_outlet_sales_price_prediction\model.pkl")
-
-df = pd.read_csv(r"D:\Harshit_Gadhiya_Step_by_stepvideo\Self_made_project\Item_outlet_sales_price_prediction\Train.csv")
+df = pd.read_csv("Train.csv")
 
 num_cols = df.select_dtypes(["int64", "float64"]).keys()
 cat_cols = df.select_dtypes("O").keys()
